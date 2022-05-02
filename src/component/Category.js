@@ -1,4 +1,4 @@
-export default function Categorie({ name, description, id }) {
+export default function Category({ name, description, id }) {
   return (
     <div>
       <div>

@@ -1,22 +1,26 @@
 import { getCategories } from "../src/services/getCategories";
-import CategorieGrid from "../src/component/CategorieGrid";
+import CategoryGrid from "../src/component/CategoryGrid";
+import { swrFetcher } from "../src/lib/swr-fetcher";
+import { SWRConfig } from "swr";
 
-export function getStaticProps() {
-  const categories = getCategories();
+export async function getStaticProps() {
+  const categories = await getCategories();
 
   return {
     props: {
-      categories,
+      fallback: {
+        "/api/categories": categories,
+      },
     },
   };
 }
 
-export default function Categories({ categories }) {
+export default function Categories({ fallback }) {
   return (
-    <div>
+    <SWRConfig value={{ fetcher: swrFetcher, fallback }}>
       <h1>Kategorien</h1>
 
-      <CategorieGrid categories={categories} />
-    </div>
+      <CategoryGrid /* categories={categories} */ />
+    </SWRConfig>
   );
 }

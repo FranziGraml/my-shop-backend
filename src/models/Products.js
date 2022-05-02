@@ -5,7 +5,7 @@ const productSchema = new mongoose.Schema({
   description: String,
   tags: Array,
   price: Number,
-  category: String,
+  category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
 });
 const Product = mongoose.models.Product ?? mongoose.model("Product", productSchema);
 
