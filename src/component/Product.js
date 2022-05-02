@@ -31,24 +31,22 @@ function ProductModeShow({
   onEnableDeleteMode,
 }) {
   return (
-    <div className="product__all">
-      <div className="product__container">
-        <div className="product__headline">
+    <div>
+      <div>
+        <div>
           <h5>{name}</h5>
           <h5>{price}</h5>
         </div>
-        <div className="product__p">
+        <div>
           <p>{description}</p>
           <p>{category}</p>
         </div>
         <ul>
           <li>{tags}</li>
         </ul>
-        <div className="product__buttons">
-          <button className="product__button" onClick={onEnableDeleteMode}>
-            Delete
-          </button>
-          <button className="product__button">Edit</button>
+        <div>
+          <button onClick={onEnableDeleteMode}>Delete</button>
+          <button>Edit</button>
         </div>
       </div>
     </div>
