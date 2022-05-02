@@ -1,6 +1,9 @@
 import Product from "./Product";
+import useSWR from "swr";
 
-export default function ProductGrid({ products }) {
+export default function ProductGrid({}) {
+  const { data: products } = useSWR("/api/products");
+
   return (
     <>
       {products.map((product) => {

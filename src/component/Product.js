@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSWRConfig } from "swr";
 
 export default function Product(props) {
   const [isDeleteMode, setDeleteMode] = useState(false);
