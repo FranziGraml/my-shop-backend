@@ -12,9 +12,9 @@ export default function ProductGrid({}) {
             <Product
               name={product.name}
               description={product.description}
+              tags={product.tags}
               price={product.price}
               category={product.category}
-              tags={product.tags}
             />
           </li>
         );
